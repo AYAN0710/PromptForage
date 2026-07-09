@@ -1,6 +1,6 @@
 from sqlalchemy import Column,Integer,Text,DateTime
 from datetime import datetime,timezone
-from app.database import Base
+from .database import Base
 
 class PromptHistory(Base):
     __tablename__="prompt_history"

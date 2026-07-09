@@ -1,13 +1,15 @@
 from fastapi import FastAPI
-from .database import Base,engine
-from . import models
-from .router import router
+from .promptmodule.database import Base,engine
+from .promptmodule import models
+from .promptmodule.router import router
+from app.textcleaner.router import router as text_router
 
 Base.metadata.create_all(bind=engine)
 
 app=FastAPI(title='Prompt Engineering Studio',description='Generate and compare Zero-Shot, Few-Shot and Chain-of-Thought prompts')
 
 app.include_router(router)
+app.include_router(text_router)
 
 @app.get('/')
 def home():

@@ -1,5 +1,5 @@
 from google import genai
-from app.config import API_KEY, MODEL_NAME
+from .config import API_KEY, MODEL_NAME
 
 client = genai.Client(api_key=API_KEY)
 
