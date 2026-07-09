@@ -3,6 +3,7 @@ from .promptmodule.database import Base,engine
 from .promptmodule import models
 from .promptmodule.router import router
 from app.textcleaner.router import router as text_router
+from app.ocrmodule.router import router as ocr_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -10,6 +11,7 @@ app=FastAPI(title='Prompt Engineering Studio',description='Generate and compare 
 
 app.include_router(router)
 app.include_router(text_router)
+app.include_router(ocr_router)
 
 @app.get('/')
 def home():

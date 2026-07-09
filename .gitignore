@@ -29,3 +29,7 @@ Thumbs.db
 .pytest_cache/
 .mypy_cache/
 .ipynb_checkpoints/
+
+# OCR uploaded images
+backend/app/ocrmodule/uploads/*
+!backend/app/ocrmodule/uploads/.gitkeep
