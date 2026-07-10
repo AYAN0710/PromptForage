@@ -8,7 +8,7 @@ nlp=spacy.load('en_core_web_sm')
 ie=inflect.engine()
 
 def number_words(text:str)->str:
-    return re.sub(r"\b\d+\b",lambda match:ie.number_words(match.group()),text)
+    return re.sub(r"\b\d+\b",lambda match:ie.number_to_words(match.group()),text)
 
 def clean_text(text:str) -> str:
     text=contractions.fix(text)

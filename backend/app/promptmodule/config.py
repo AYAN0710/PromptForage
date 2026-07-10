@@ -4,7 +4,7 @@ import os
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.1-flash-lite"
 
 if not API_KEY:
     raise ValueError(

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from .promptmodule.database import Base,engine
 from .promptmodule import models
 from .promptmodule.router import router
@@ -8,6 +9,14 @@ from app.ocrmodule.router import router as ocr_router
 Base.metadata.create_all(bind=engine)
 
 app=FastAPI(title='Prompt Engineering Studio',description='Generate and compare Zero-Shot, Few-Shot and Chain-of-Thought prompts')
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(router)
 app.include_router(text_router)
