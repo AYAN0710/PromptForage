@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR - PromptForge AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prompt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="laser-bg"></canvas>
+
+    <nav class="top-nav">
+        <div class="logo">Prompt<span>Forge</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#modules">Modules</a></li>
+        </ul>
+    </nav>
+
+    <main class="scroll-container">
+        <section class="snap-section prompt-module-section">
+            <div class="prompt-container glass-container flex-col">
+                <div class="mini-hero glass-panel">
+                    <h2>IMAGE TO TEXT <span class="highlight" style="background: linear-gradient(to right, #ff00aa 0%, #ff66cc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">OCR</span></h2>
+                    <p>Upload an image containing text to extract its content.</p>
+                </div>
+                
+                <div class="prompt-workspace glass-panel">
+                    <label class="prompt-label"><strong>Upload an Image (.png, .jpg, .jpeg):</strong></label>
+                    <div class="input-group">
+                        <input type="file" id="image-upload" accept="image/*" class="prompt-input" style="padding: 1rem; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--glass-border); border-radius: 12px; color: white; cursor: pointer;">
+                        <button id="extract-btn" class="cta-button" style="background: linear-gradient(135deg, #c2185b 0%, #ff00aa 100%); white-space: nowrap;">Extract Text</button>
+                    </div>
+                    
+                    <div class="response-grid" id="response-container" style="display: none; max-height: unset;">
+                        <div class="response-row">
+                            <div class="response-col">
+                                <h3 style="color: #ff66cc;">Extracted Text</h3>
+                                <div id="extracted-response" class="output-box" style="min-height: 150px;"></div>
+                            </div>
+                        </div>
+                        <div class="response-row" style="justify-content: center; margin-top: 1.5rem;">
+                            <button id="clear-btn" class="cta-button" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); border-radius: 8px;">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-section">
+                <nav class="small-navbar glass-panel">
+                    <div class="footer-logo">PromptForge &copy; 2026</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <script src="ocr.js"></script>
+</body>
+</html>
