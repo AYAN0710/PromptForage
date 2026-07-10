@@ -7,16 +7,16 @@ def generate_zero_shot_prompt(user_prompt: str) -> str:
 
 def generate_few_shot_prompt(user_prompt: str) -> str:
     return f"""
-    You are a helpful AI assistant.
-    Example 1
-    User:What is Python?
-    Assistant:Python is a high-level programming language used for web development, AI, automation, and data science.
-    -----------------------
-    Example 2
-    User:Tell me about Lionel Messi.
-    Assistant:Lionel Messi is an Argentine footballer regarded as one of the greatest players in football history.
-    -----------------------
-    Now answer the following in few shot prompting
+    Act as an expert assistant. Follow the pattern of the examples below to complete the final task.
+    Example 1:
+    Input: [Provide an example input]
+    Output: [Provide the exact output you want]
+    Example 2:
+    Input: [Provide another example input]
+    Output: [Provide the exact output you want]
+    Example 3:
+    Input: [Provide a third example input]
+    Output: [Provide the exact output you want]
 
     User:
     {user_prompt}
